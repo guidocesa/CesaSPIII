@@ -1,0 +1,75 @@
+<html lang="en">
+    
+<head>
+    <script src="./Clases/Clases.js"></script>
+    <script src="funciones.js">
+    </script>
+    <link rel="stylesheet" href="./Estilos.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM CLientes</title>
+</head>
+<body>
+            <div id="divFlex">
+                  
+                <div id="divSpinner" class="spinner" hidden></div> 
+                
+
+                <div class="main-block">
+                    <h1>Registro</h1>
+                    <form action="/">
+                      <hr>
+                      <label id="idlbl" for="id">Nombre</label>
+                      <input type="text" name="id" id="id" placeholder="Id"/>
+                      <br>
+                      <label id="nombrelbl" for="nombre">Nombre</label>
+                      <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
+                      <br>
+                      <label id="apellidolbl" for="apellido">Apellido</label>
+                      <input type="text" name="apellido" id="apellido" placeholder="Apellido"/>
+                      <br>
+                      <label id="edadlbl" for="edad">Edad</label>
+                      <input type="text" name="edad" id="edad" placeholder="Edad"/>
+                      <br>
+                      <select id="sexo"></select>
+                      <br>
+                      <div class="row">  <input type="button" value="Agregar" onclick="agregarCliente()"  />
+                        <input type="button" value="Eliminar" onclick="eliminarCliente()" /> 
+                        <input type="button" value="Limpiar" onclick="limpiar()" />
+                      </div>
+                    </form>
+                </div>
+                <h1>Filtros</h1>
+                <p>Filtrar por:</p> <select id="filtroSexo" onchange="filtrarTabla()"> </select> <input type="button" value="x" onclick="LimpiarFiltro()"  />
+
+                <label>Promedio de edad:<input type="text" id="promedioEdad" placeholder="00"/></label>
+
+
+
+
+                <div>
+                    <label><input type="checkbox" checked="true" id="cboxId"  onchange="CambiarEstadoColumna(0)">ID</label>
+                    <label><input type="checkbox" id="cboxNombre"  checked="true"  onchange="CambiarEstadoColumna(1)">Nombre</label>
+                    <label><input type="checkbox" id="cboxApellido"   checked="true" onchange="CambiarEstadoColumna(2)">Apellido</label>
+                    <label><input type="checkbox" id="cboxEdad"  checked="true" onchange="CambiarEstadoColumna(3)">Edad</label>               <br>
+                    <table id="tabla" class="grilla tabla">
+                        <thead>
+                        <tr>
+                            <th> ID</th>
+                            <th> Nombre</th>
+                            <th> Apellido</th>
+                            <th> Edad</th>
+                            <th> Sexo</th>
+                        </tr>
+                        </thead>
+                        <tbody id="body_id" >
+
+                        </tbody>
+                    </table>
+                </div>   
+              
+            </div> 
+</body>
+</html>
